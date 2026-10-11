@@ -26,10 +26,10 @@
 
   <a-assets>
 
-    <!-- アニメーション画像 -->
+    <!-- キャラなしの背景画像 -->
     <img
-      id="character"
-      src="./character.png"
+      id="background"
+      src="./test-1-2.png"
     />
 
   </a-assets>
@@ -39,15 +39,16 @@
     look-controls="enabled: false">
   </a-camera>
 
-  <!-- 認識した画像 -->
+  <!-- キャラあり画像を認識 -->
   <a-entity mindar-image-target="targetIndex: 0">
 
+    <!-- キャラなし背景を表示 -->
     <a-image
-      id="characterImage"
-      src="#character"
-      position="0 0 0.1"
-      width="0.5"
-      height="0.5">
+      id="backgroundImage"
+      src="#background"
+      position="0 0 0"
+      width="1"
+      height="1.256">
     </a-image>
 
   </a-entity>
