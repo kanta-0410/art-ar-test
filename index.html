@@ -5,7 +5,7 @@
 
   <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image.prod.js"></script>
   <script src="https://aframe.io/releases/1.2.0/aframe.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.4/dist/mindar-image-aframe.prod.js"></script>
+  <script src="https://cdn.jsdelivr.net/gh/hiukim/mind-ar-js@1.1.1/dist/mindar-image-aframe.prod.js"></script>
 
   <style>
     body {
@@ -26,11 +26,34 @@
 
   <a-assets>
 
-    <!-- キャラなしの背景画像 -->
+    <!-- キャラなし背景 -->
     <img
       id="background"
       src="./test-1-2.png"
     />
+
+    <!-- アニメーション21枚 -->
+    <img id="frame0" src="./testanimation0000.png">
+    <img id="frame1" src="./testanimation0001.png">
+    <img id="frame2" src="./testanimation0002.png">
+    <img id="frame3" src="./testanimation0003.png">
+    <img id="frame4" src="./testanimation0004.png">
+    <img id="frame5" src="./testanimation0005.png">
+    <img id="frame6" src="./testanimation0006.png">
+    <img id="frame7" src="./testanimation0007.png">
+    <img id="frame8" src="./testanimation0008.png">
+    <img id="frame9" src="./testanimation0009.png">
+    <img id="frame10" src="./testanimation0010.png">
+    <img id="frame11" src="./testanimation0011.png">
+    <img id="frame12" src="./testanimation0012.png">
+    <img id="frame13" src="./testanimation0013.png">
+    <img id="frame14" src="./testanimation0014.png">
+    <img id="frame15" src="./testanimation0015.png">
+    <img id="frame16" src="./testanimation0016.png">
+    <img id="frame17" src="./testanimation0017.png">
+    <img id="frame18" src="./testanimation0018.png">
+    <img id="frame19" src="./testanimation0019.png">
+    <img id="frame20" src="./testanimation0020.png">
 
   </a-assets>
 
@@ -39,10 +62,10 @@
     look-controls="enabled: false">
   </a-camera>
 
-  <!-- キャラあり画像を認識 -->
+  <!-- 絵を認識 -->
   <a-entity mindar-image-target="targetIndex: 0">
 
-    <!-- キャラなし背景を表示 -->
+    <!-- キャラなし背景 -->
     <a-image
       id="backgroundImage"
       src="#background"
@@ -51,9 +74,42 @@
       height="1.256">
     </a-image>
 
+    <!-- アニメーション -->
+    <a-image
+      id="animationImage"
+      src="#frame0"
+      position="0 0 0.02"
+      width="0.4"
+      height="0.4">
+    </a-image>
+
   </a-entity>
 
 </a-scene>
+
+<script>
+
+  const animationImage = document.querySelector("#animationImage");
+
+  let frame = 0;
+
+  function playAnimation() {
+
+    animationImage.setAttribute(
+      "src",
+      "#frame" + frame
+    );
+
+    frame++;
+
+    if (frame >= 21) {
+      frame = 0;
+    }
+  }
+
+  setInterval(playAnimation, 83);
+
+</script>
 
 </body>
 </html>
