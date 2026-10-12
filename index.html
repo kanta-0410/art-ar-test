@@ -25,20 +25,18 @@
   device-orientation-permission-ui="enabled: false">
 
   <a-assets>
+
+    <!-- キャラなし背景 -->
     <img
       id="background"
-      src="./test-1-2.png"
-      <img id="frame0" src="./testanimation0000.bmp">
-    >
-  </a-assets>
+      src="./test-1-2.png">
 
-  <a-image
-  id="animationImage"
-  src="#frame0"
-  position="0 0 0.02"
-  width="0.4"
-  height="0.4">
-</a-image>
+    <!-- アニメーション1枚目 -->
+    <img
+      id="frame0"
+      src="./testanimation0000.bmp">
+
+  </a-assets>
 
   <a-camera
     position="0 0 0"
@@ -47,11 +45,22 @@
 
   <a-entity mindar-image-target="targetIndex: 0">
 
+    <!-- キャラなし背景 -->
     <a-image
+      id="backgroundImage"
       src="#background"
       position="0 0 0"
       width="1"
       height="1.256">
+    </a-image>
+
+    <!-- キャラクター -->
+    <a-image
+      id="animationImage"
+      src="#frame0"
+      position="0 0 0.02"
+      width="0.4"
+      height="0.4">
     </a-image>
 
   </a-entity>
