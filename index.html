@@ -107,13 +107,7 @@
     });
   }
 
-  // 画面に状態を表示
-  const status = document.createElement("div");
-  status.style.cssText =
-    "position:fixed;top:10px;left:10px;z-index:9999;" +
-    "background:black;color:white;padding:10px;font-size:16px;";
-  status.textContent = "準備中";
-  document.body.appendChild(status);
+  
 
   function showStatus(message) {
     status.textContent = message;
