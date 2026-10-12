@@ -132,20 +132,23 @@
     }
   }
 
-  function playAnimation() {
-    stopAnimation();
-    frame = 0;
+  
+function playAnimation() {
+  stopAnimation();
+  frame = 0;
 
-    animationImage.setAttribute("src", "#frame0");
+  timer = setInterval(() => {
+    frame = (frame + 1) % 21;
 
-    timer = setInterval(() => {
-      frame = (frame + 1) % 21;
-      animationImage.setAttribute(
-        "src",
-        "#frame" + frame
-      );
-    }, 83);
-  }
+    animationImage.setAttribute(
+      "src",
+      "#frame" + frame
+    );
+
+    console.log("現在のフレーム:", frame);
+  }, 200);
+}
+
 
   // 画像の準備ができたら、マーカー認識時に再生
   waitForImages()
