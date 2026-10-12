@@ -153,11 +153,15 @@
       ready = true;
       console.log("21枚の画像を読み込みました");
 
-      target.addEventListener("targetFound", () => {
-        if (ready) {
-          playAnimation();
-        }
-      });
+      
+target.addEventListener("targetFound", () => {
+  console.log("マーカーを認識したよ！");
+  if (ready) {
+    console.log("アニメーション開始！");
+    playAnimation();
+  }
+});
+
 
       target.addEventListener("targetLost", () => {
         stopAnimation();
